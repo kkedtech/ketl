@@ -37,7 +37,7 @@
   </header>
 
   <section id="top" style="padding:76px 0 20px;">
-    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr); gap: 52px; align-items: center; position: relative">
+    <div class="hero-grid" style="max-width: 1180px; margin: 0 auto; padding: 0 28px; position: relative">
       <div>
         <div style="display:inline-flex;align-items:center;gap:10px;font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-2-700);font-weight:700;margin-bottom:26px;">
           <span style="width:26px;height:3px;border-radius:999px;background:var(--color-accent);"></span>
@@ -195,23 +195,23 @@
     <div style="max-width:1180px;margin:0 auto;padding:0 28px;">
       <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;margin:0 0 38px;max-width:24ch;">What they walk away with.</h2>
       <div style="display:flex;flex-direction:column;gap:0;">
-        <div style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:28px;padding:22px 0;border-top:1px solid var(--color-divider);align-items:baseline;">
+        <div class="outcome-row" style="padding:22px 0;border-top:1px solid var(--color-divider);">
           <div style="font-family:var(--font-heading);font-weight:400;font-size:1.1rem;">Free Parent Webinar</div>
           <p style="margin:0;font-size:1rem;line-height:1.55;color:var(--color-neutral-800);">A clear picture of the whole pathway, and one honest answer about what to book next.</p>
         </div>
-        <div style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:28px;padding:22px 0;border-top:1px solid var(--color-divider);align-items:baseline;">
+        <div class="outcome-row" style="padding:22px 0;border-top:1px solid var(--color-divider);">
           <div style="font-family:var(--font-heading);font-weight:400;font-size:1.1rem;">Unplugged AI</div>
           <p style="margin:0;font-size:1rem;line-height:1.55;color:var(--color-neutral-800);">A working sense of how AI learns, sees and fails — and their first live blocks of code.</p>
         </div>
-        <div style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:28px;padding:22px 0;border-top:1px solid var(--color-divider);align-items:baseline;">
+        <div class="outcome-row" style="padding:22px 0;border-top:1px solid var(--color-divider);">
           <div style="font-family:var(--font-heading);font-weight:400;font-size:1.1rem;">Holiday AI Sprint</div>
           <p style="margin:0;font-size:1rem;line-height:1.55;color:var(--color-neutral-800);">Five to ten sessions of block-coding and AI concepts, and something they built and can explain.</p>
         </div>
-        <div style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:28px;padding:22px 0;border-top:1px solid var(--color-divider);align-items:baseline;">
+        <div class="outcome-row" style="padding:22px 0;border-top:1px solid var(--color-divider);">
           <div style="font-family:var(--font-heading);font-weight:400;font-size:1.1rem;">Coding Club</div>
           <p style="margin:0;font-size:1rem;line-height:1.55;color:var(--color-neutral-800);">Week-over-week momentum from block-based coding toward systems thinking, and the habit of finishing.</p>
         </div>
-        <div style="display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:28px;padding:22px 0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);align-items:baseline;">
+        <div class="outcome-row" style="padding:22px 0;border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider);">
           <div style="font-family:var(--font-heading);font-weight:400;font-size:1.1rem;">1:1 / Small Group</div>
           <p style="margin:0;font-size:1rem;line-height:1.55;color:var(--color-neutral-800);">A pace set by the child rather than the cohort, and readiness to join one.</p>
         </div>
@@ -226,7 +226,7 @@
         <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;margin:0;">The detail, before you commit.</h2>
       </div>
 
-      <div id="webinar" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:44px;padding:36px 0;border-top:2px solid var(--color-accent-2-600);align-items:start;">
+      <div id="webinar" class="detail-grid" style="padding:36px 0;border-top:2px solid var(--color-accent-2-600);">
         <div>
           <span class="tag tag-accent-2" style="margin-bottom:16px;display:inline-block;">Item 01 · Webinar</span>
           <h3 style="font-family:var(--font-heading);font-weight:400;font-size:1.8rem;line-height:1.15;margin:0 0 16px;">Free Parent Webinar — Meet KETL</h3>
@@ -244,7 +244,7 @@
         </div>
       </div>
 
-      <div id="unplugged-session" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:44px;padding:36px 0;border-top:2px solid var(--color-accent-500);align-items:start;">
+      <div id="unplugged-session" class="detail-grid" style="padding:36px 0;border-top:2px solid var(--color-accent-500);">
         <div>
           <span class="tag tag-accent" style="margin-bottom:16px;display:inline-block;">Item 02 · Workshop</span>
           <h3 style="font-family:var(--font-heading);font-weight:400;font-size:1.8rem;line-height:1.15;margin:0 0 16px;">Unplugged AI — Single Session</h3>
@@ -262,7 +262,7 @@
         </div>
       </div>
 
-      <div id="holiday-sprint" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:44px;padding:36px 0;border-top:2px solid var(--color-accent-2-700);align-items:start;">
+      <div id="holiday-sprint" class="detail-grid" style="padding:36px 0;border-top:2px solid var(--color-accent-2-700);">
         <div>
           <span class="tag tag-accent-2" style="margin-bottom:16px;display:inline-block;">Item 03 · Course</span>
           <h3 style="font-family:var(--font-heading);font-weight:400;font-size:1.8rem;line-height:1.15;margin:0 0 16px;">Holiday AI Sprint — 5-10 Sessions</h3>
@@ -280,7 +280,7 @@
         </div>
       </div>
 
-      <div id="coding-club" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:44px;padding:36px 0;border-top:2px solid var(--color-neutral-800);align-items:start;">
+      <div id="coding-club" class="detail-grid" style="padding:36px 0;border-top:2px solid var(--color-neutral-800);">
         <div>
           <span class="tag tag-neutral" style="margin-bottom:16px;display:inline-block;">Item 04 · Membership</span>
           <h3 style="font-family:var(--font-heading);font-weight:400;font-size:1.8rem;line-height:1.15;margin:0 0 16px;">Coding Club — Weekly Ongoing</h3>
@@ -298,7 +298,7 @@
         </div>
       </div>
 
-      <div id="one-to-one" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:44px;padding:36px 0;border-top:2px solid var(--color-accent-700);border-bottom:1px solid var(--color-divider);align-items:start;">
+      <div id="one-to-one" class="detail-grid" style="padding:36px 0;border-top:2px solid var(--color-accent-700);border-bottom:1px solid var(--color-divider);">
         <div>
           <span class="tag tag-outline" style="margin-bottom:16px;display:inline-block;">Item 05 · Tutoring</span>
           <h3 style="font-family:var(--font-heading);font-weight:400;font-size:1.8rem;line-height:1.15;margin:0 0 16px;">1:1 / Small Group Sessions</h3>
@@ -348,14 +348,14 @@
   </section>
 
   <section id="method" style="padding:92px 0;background:var(--color-neutral-900);color:var(--color-neutral-100);">
-    <div style="max-width:1180px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:start;">
+    <div class="method-grid" style="max-width:1180px;margin:0 auto;padding:0 28px;">
       <div>
         <div style="font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-400);font-weight:700;margin-bottom:20px;">The method</div>
         <p style="font-family: var(--font-heading); font-weight: 400; font-size: clamp(1.4rem,2.7vw,2.05rem); line-height: 1.32; margin: 0; text-wrap: pretty; text-align: left">
           Most technology education produces users. That's not a shortage of access — <span style="color:var(--color-accent-400);">it's a design flaw.</span> A child who only consumes what a screen gives them never learns what's on the other side of it. KETL exists to put children on the other side — building, breaking, rebuilding, on their own terms.
         </p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:26px;padding-left:32px;border-left:1px solid var(--color-neutral-700);">
+      <div class="method-aside" style="display:flex;flex-direction:column;gap:26px;">
         <div>
           <div style="font-family:var(--font-heading);font-size:1.1rem;color:var(--color-accent-400);margin-bottom:8px;">Unplugged before code</div>
           <p style="margin:0;font-size:0.96rem;line-height:1.6;color:var(--color-neutral-200);">Cards, grids and stories first. A child who understands the idea writes better code than one who only knows the syntax.</p>
@@ -478,7 +478,7 @@
 
   <a class="sticky-wa" href="https://wa.me/61470110227?text=Hi%20KETL%2C%20I%20have%20a%20question%20about%20the%20programs." style="position:fixed;right:22px;bottom:22px;z-index:80;display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;background:var(--color-accent-600);color:#fff;font-weight:700;font-size:0.96rem;text-decoration:none;box-shadow:var(--shadow-lg);">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"></path></svg>
-    WhatsApp us
+    <span class="sticky-wa-label">WhatsApp us</span>
   </a>
 
 </div>
