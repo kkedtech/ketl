@@ -169,3 +169,23 @@ details[open] .faq-plus { transform: rotate(45deg); }
    inline hover styles (not reproducible with plain inline CSS) — */
 .cta-webinar-white:hover { background: var(--color-accent-2-100) !important; }
 .sticky-wa:hover { background: var(--color-accent-700) !important; }
+
+/* — layout grids that need to stack on narrow screens. Defined here
+   (rather than left as inline styles) so the mobile media query below
+   can override them without !important. — */
+.hero-grid { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr); gap: 52px; align-items: center; }
+.outcome-row { display: grid; grid-template-columns: minmax(0,0.85fr) minmax(0,1.15fr); gap: 28px; align-items: baseline; }
+.detail-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,320px); gap: 44px; align-items: start; }
+.method-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 56px; align-items: start; }
+.method-aside { padding-left: 32px; border-left: 1px solid var(--color-neutral-700); }
+
+@media (max-width: 720px) {
+  .hero-grid, .outcome-row, .detail-grid, .method-grid { grid-template-columns: 1fr; }
+  .method-aside { padding-left: 0; border-left: 0; }
+  /* the sticky button already offers this CTA on mobile — the header
+     copy of it just eats a nav row */
+  header nav a.btn-primary { display: none; }
+  section { padding-top: 48px !important; padding-bottom: 48px !important; }
+  .sticky-wa { padding: 14px !important; }
+  .sticky-wa-label { display: none; }
+}
