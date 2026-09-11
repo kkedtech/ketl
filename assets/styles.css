@@ -103,6 +103,7 @@ figcaption {
 summary::-webkit-details-marker { display: none; }
 summary { list-style: none; cursor: pointer; }
 details[open] .faq-plus { transform: rotate(45deg); }
+details[open] .tier-chevron { transform: rotate(90deg); }
 
 /* — rules — */
 .hr {
