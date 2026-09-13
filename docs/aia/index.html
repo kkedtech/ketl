@@ -82,7 +82,7 @@
     <div style="max-width:1180px;margin:0 auto;padding:0 28px;">
       <div style="max-width:60ch;margin-bottom:44px;">
         <div style="font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-2-700);font-weight:700;margin-bottom:14px;">The pathway</div>
-        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;margin:0 0 14px;white-space:nowrap;overflow:auto;">Explorer → Co-Creator → Architect.</h2>
+        <h2 style="font-family:var(--font-heading);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;margin:0 0 14px;" class="pathway-heading">Explorer → Co-Creator → Architect.</h2>
         <p style="margin:0;font-size:1.03rem;line-height:1.6;color:var(--color-neutral-800);">A system to click into, not a syllabus to read. Each tier ends on what a student builds, not what they learn about.</p>
       </div>
 
@@ -286,7 +286,16 @@
   </div>
 
   <style>
+    .pathway-heading {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     @media (max-width: 720px) {
+      .pathway-heading {
+        white-space: normal;
+        overflow: visible;
+      }
       div[style*="position:fixed;left:22px"] {
         left: auto !important;
         right: 22px !important;
