@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KETL AI + Coding Sprint — Spring Holidays</title>
+  <meta name="description" content="AI + Coding Sprint for ages 9–12. Build, don't just play. 28 Sep – 2 Oct & 6–9 Oct. From $219.">
+
+  <style>
+    /* ===== DESIGN SYSTEM & PALETTE ===== */
+    :root {
+      --color-cream: #faf8f3;
+      --color-tan: #f5e8d8;
+      --color-blue: #2c5f8a;
+      --color-blue-light: #e8f0f7;
+      --color-orange: #d97b3f;
+      --color-orange-light: #f5e9e0;
+      --color-neutral-900: #1a1a1a;
+      --color-neutral-700: #4a4a4a;
+      --color-neutral-600: #666;
+      --color-neutral-400: #999;
+      --color-neutral-200: #ddd;
+      --color-neutral-100: #f0f0f0;
+      --color-white: #fff;
+      --color-success: #4caf50;
+
+      --font-heading: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 36px;
+      --space-2xl: 52px;
+
+      --radius: 12px;
+      --radius-lg: 16px;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ===== PLACEHOLDER CONFIG ===== */
+    /* Replace these with actual values before deployment: */
+    /* {{COHORT_CAP}} = max students per cohort (e.g., "6-9") */
+    /* {{FORMAT}} = daily hours (e.g., "2 hours / day" or "half-day") */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: var(--font-body);
+      background: var(--color-cream);
+      color: var(--color-neutral-900);
+      line-height: 1.6;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 248, 243, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(41, 95, 138, 0.1);
+      padding: var(--space-md) var(--space-lg);
+    }
+
+    .header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-lg);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      text-decoration: none;
+      color: var(--color-neutral-900);
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--color-neutral-700);
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--color-blue);
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        display: none;
+      }
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+      gap: var(--space-xs);
+    }
+
+    .btn-primary {
+      background: var(--color-blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1d4063;
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--color-blue);
+      border: 2px solid var(--color-blue);
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-blue-light);
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: var(--space-2xl) var(--space-lg);
+      background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-tan) 100%);
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: var(--space-md);
+      color: var(--color-neutral-900);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--color-neutral-700);
+      margin-bottom: var(--space-xl);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      justify-content: center;
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: white;
+      padding: var(--space-lg) var(--space-lg);
+      border-bottom: 1px solid var(--color-neutral-200);
+    }
+
+    .trust-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-lg);
+      font-size: 0.9rem;
+      color: var(--color-neutral-600);
+      text-align: center;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .trust-item strong {
+      color: var(--color-neutral-900);
+    }
+
+    @media (max-width: 720px) {
+      .trust-inner {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+    }
+
+    /* ===== SECTION LAYOUT ===== */
+    section {
+      padding: var(--space-2xl) var(--space-lg);
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      max-width: 800px;
+      margin-bottom: var(--space-xl);
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: var(--space-md);
+      color: var(--color-neutral-900);
+    }
+
+    .section-intro {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--color-neutral-700);
+    }
+
+    /* ===== PATHWAY CARDS ===== */
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+
+    .pathway-card {
+      background: white;
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border-top: 4px solid var(--color-blue);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pathway-card:nth-child(2) {
+      border-top-color: var(--color-orange);
+    }
+
+    .pathway-card:nth-child(3) {
+      border-top-color: var(--color-blue);
+    }
+
+    .pathway-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pathway-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: var(--space-md);
+      color: var(--color-neutral-900);
+    }
+
+    .pathway-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--color-neutral-700);
+    }
+
+    /* ===== COHORT DETAILS ===== */
+    .cohort-section {
+      background: var(--color-blue-light);
+    }
+
+    .cohort-details {
+      background: white;
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      margin-top: var(--space-lg);
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--color-neutral-200);
+    }
+
+    .detail-row:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .detail-item strong {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-blue);
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .detail-item p {
+      font-size: 0.95rem;
+      color: var(--color-neutral-700);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 720px) {
+      .detail-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== PRICING CARDS ===== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+
+    .pricing-card {
+      background: white;
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 2px solid transparent;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--color-orange);
+      background: var(--color-orange-light);
+      transform: scale(1.05);
+    }
+
+    .pricing-card.featured:hover {
+      transform: scale(1.08);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pricing-badge {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-orange);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+
+    .pricing-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: var(--space-sm);
+      color: var(--color-neutral-900);
+    }
+
+    .pricing-details {
+      font-size: 0.9rem;
+      color: var(--color-neutral-600);
+      margin-bottom: var(--space-md);
+      flex-grow: 1;
+    }
+
+    .pricing-details p {
+      margin-bottom: var(--space-sm);
+    }
+
+    .pricing-price {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--color-blue);
+      margin-bottom: var(--space-md);
+    }
+
+    .pricing-price small {
+      font-size: 0.5em;
+      color: var(--color-neutral-600);
+      font-weight: 400;
+    }
+
+    /* ===== OFFERS & DISCOUNTS ===== */
+    .offers-section {
+      background: var(--color-neutral-100);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      margin-top: var(--space-lg);
+      font-size: 0.9rem;
+    }
+
+    .offers-section strong {
+      color: var(--color-blue);
+      font-weight: 600;
+    }
+
+    .offers-item {
+      margin-bottom: var(--space-md);
+      line-height: 1.6;
+    }
+
+    .offers-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== INFO SECTION ===== */
+    .info-section {
+      background: white;
+      border: 1px solid var(--color-neutral-200);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin-top: var(--space-xl);
+      text-align: center;
+    }
+
+    .info-section h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: var(--space-md);
+      color: var(--color-neutral-900);
+    }
+
+    .info-section p {
+      font-size: 0.95rem;
+      color: var(--color-neutral-700);
+      margin-bottom: var(--space-lg);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== BOOKING CTA ===== */
+    .booking-section {
+      background: var(--color-orange-light);
+    }
+
+    .booking-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .booking-section h2 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: var(--space-lg);
+      color: var(--color-neutral-900);
+    }
+
+    .booking-section p {
+      font-size: 1rem;
+      color: var(--color-neutral-700);
+      margin-bottom: var(--space-lg);
+    }
+
+    /* TODO: Tally.so form embed placeholder */
+    #tally-form {
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: var(--radius-lg);
+      margin-top: var(--space-lg);
+      color: var(--color-neutral-600);
+      font-size: 0.9rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--color-neutral-900);
+      color: var(--color-neutral-400);
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--color-orange);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      margin-top: var(--space-lg);
+      display: flex;
+      justify-content: center;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    /* ===== MOBILE RESPONSIVENESS ===== */
+    @media (max-width: 720px) {
+      section {
+        padding: var(--space-xl) var(--space-md);
+      }
+
+      .hero {
+        padding: var(--space-xl) var(--space-md);
+      }
+
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+
+      .pricing-card.featured:hover {
+        transform: translateY(-2px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <img src="../uploads/KETL-Circular-3d-logo-ketl-kanga-kk.png" alt="KETL">
+      <span>KETL</span>
+    </a>
+    <nav>
+      <a href="#holiday-sprint">Camps</a>
+      <a href="/#about">About</a>
+      <a href="mailto:info@ketl.au">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Spring Holidays</div>
+    <h1>This holidays: build, don't just play.</h1>
+    <p>AI + Coding Sprint for ages 9–12. Five days coding real systems, not dragging blocks.</p>
+    <div class="hero-cta">
+      <a href="#holiday-sprint" class="btn btn-primary">Reserve Your Spot</a>
+      <a href="#info" class="btn btn-secondary">Free Info Session</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <strong>Ages 9–12</strong>
+      <span>no experience needed</span>
+    </div>
+    <div class="trust-item">
+      <strong>WWCC-checked</strong>
+      <span>working with children</span>
+    </div>
+    <div class="trust-item">
+      <strong>Led by</strong>
+      <span>20+ year IT industry architect</span>
+    </div>
+  </div>
+</div>
+
+<!-- PATHWAY -->
+<section class="pathway-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">How it works</div>
+      <h2 class="section-title">What they'll actually build.</h2>
+      <p class="section-intro">They won't just prompt AI. They'll learn what it's built on. Real projects, real code, real systems.</p>
+    </div>
+    <div class="pathway-grid">
+      <div class="pathway-card">
+        <h3>Explorer</h3>
+        <p><strong>Days 1–2:</strong> Understand how AI learns. Block-code a machine learning classifier. First real functions, first real logic.</p>
+      </div>
+      <div class="pathway-card">
+        <h3>Partner</h3>
+        <p><strong>Days 2–4:</strong> Configure AI as a working partner. Integrate an API. Code against a real system, not a sandbox.</p>
+      </div>
+      <div class="pathway-card">
+        <h3>Architect</h3>
+        <p><strong>Day 5:</strong> Put it together. Build a small tool that does something useful. Portfolio piece. Proof they understand the stack.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COHORT DETAILS -->
+<section class="cohort-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Program details</div>
+      <h2 class="section-title">Two weeks. Flexible options. Pick what works.</h2>
+    </div>
+    <div class="cohort-details">
+      <div class="detail-row">
+        <div class="detail-item">
+          <strong>Week 1: Spring Break Sprint</strong>
+          <p>28 Sep – 2 Oct (5 days, Mon–Fri)</p>
+          <p>Format: {{FORMAT}} / day, small cohort (max {{COHORT_CAP}} students)</p>
+        </div>
+        <div class="detail-item">
+          <strong>Week 2: Extended Sprint</strong>
+          <p>6–9 Oct (4 days, Mon–Thu) + 5 Oct (Labour Day, optional)</p>
+          <p>Same cohort size, same structure. Labour Day session runs if parents want it.</p>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-item">
+          <strong>Why small groups?</strong>
+          <p>Every student shows what they made. No one sits in the corner watching someone else code.</p>
+        </div>
+        <div class="detail-item">
+          <strong>What happens after?</strong>
+          <p>Feeds into Coding Club weekly (Term 4 onwards). A path, not a one-off.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="holiday-sprint">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Investment</div>
+      <h2 class="section-title">Pricing & Options</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-badge">Week 1</div>
+        <h3>Spring Break Sprint</h3>
+        <div class="pricing-details">
+          <p>28 Sep – 2 Oct</p>
+          <p>5 days</p>
+          <p>Max {{COHORT_CAP}} students</p>
+        </div>
+        <div class="pricing-price">$274</div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-badge">Week 2</div>
+        <h3>Extended Sprint</h3>
+        <div class="pricing-details">
+          <p>6–9 Oct (+ 5 Oct optional)</p>
+          <p>4 days (5 if Labour Day included)</p>
+          <p>Max {{COHORT_CAP}} students</p>
+        </div>
+        <div class="pricing-price">$219<small> / 4 days</small></div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-badge">Best Value</div>
+        <h3>Labour Day Add-On</h3>
+        <div class="pricing-details">
+          <p>5 Oct only (Mon)</p>
+          <p>Extends Week 2 to 5 days</p>
+          <p>Same cohort, same instructor</p>
+        </div>
+        <div class="pricing-price">$274<small> / 5 days</small></div>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Recommended</div>
+        <h3>Both Weeks Bundle</h3>
+        <div class="pricing-details">
+          <p>28 Sep – 2 Oct + 6–9 Oct</p>
+          <p>9 days total</p>
+          <p>Max {{COHORT_CAP}} students</p>
+        </div>
+        <div class="pricing-price">$399</div>
+      </div>
+    </div>
+
+    <div class="offers-section">
+      <div class="offers-item">
+        <strong>Coding Club families:</strong> Get $40 credit toward Term 4 weekly Coding Club sessions when you book the 2-Week Bundle.
+      </div>
+      <div class="offers-item">
+        <strong>Siblings:</strong> 10% off your total booking when more than one child from the same family enrolls.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO SESSION -->
+<section id="info">
+  <div class="section-inner">
+    <div class="info-section">
+      <h3>Not sure yet? Talk to us first.</h3>
+      <p>Free 20-minute parent conversation. Understand the pathway, the philosophy, and whether this sprint is the right fit for your child — no sales pitch, no obligation.</p>
+      <a href="https://wa.me/61470110227?text=Hi%20KETL%2C%20I%20want%20to%20book%20a%20free%20parent%20conversation%20about%20the%20Spring%20Holiday%20Sprint." class="btn btn-secondary">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA -->
+<section class="booking-section">
+  <div class="booking-inner">
+    <h2>Ready. Let's go.</h2>
+    <p>Reserve your spot below. We'll send you everything you need — session link, code setup guide, what to have on hand.</p>
+
+    <!-- TODO: Tally.so embed -->
+    <!-- Paste the Tally.so embed script here: https://tally.so/r/wvzXL8 (example) -->
+    <!-- The form should: capture name, age, email, which week(s), extras (Labour Day?), guardian info -->
+    <!-- Tally handles Stripe integration on the backend — form submission triggers payment flow -->
+    <div id="tally-form">
+      <p><em>Booking form embedding here. Paste Tally.so embed script inside this div.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p><strong>KETL</strong> — Kanga EdTech Vision Labs</p>
+    <p style="margin-top: var(--space-md); font-size: 0.8rem;">Building the next generation of technology creators, not consumers.</p>
+    <div class="footer-links">
+      <a href="mailto:info@ketl.au">info@ketl.au</a>
+      <a href="https://www.instagram.com/ketl.au">Instagram</a>
+      <a href="https://www.facebook.com/ketl.anz">Facebook</a>
+      <a href="https://www.linkedin.com/company/kanga-edtech-vision-labs">LinkedIn</a>
+    </div>
+    <p style="margin-top: var(--space-lg); color: var(--color-neutral-600);">Booking anchor: ketl.au/#holiday-sprint (note: migrate to clean /camps route when DNS allows)</p>
+  </div>
+</footer>
+
+</body>
+</html>
