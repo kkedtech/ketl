@@ -7,24 +7,48 @@
   <meta name="description" content="AI + Coding Sprint for ages 9–12. Build, don't just play. 28 Sep – 2 Oct & 6–9 Oct. From $219.">
 
   <style>
-    /* ===== DESIGN SYSTEM & PALETTE ===== */
-    :root {
-      --color-cream: #faf8f3;
-      --color-tan: #f5e8d8;
-      --color-blue: #2c5f8a;
-      --color-blue-light: #e8f0f7;
-      --color-orange: #d97b3f;
-      --color-orange-light: #f5e9e0;
-      --color-neutral-900: #1a1a1a;
-      --color-neutral-700: #4a4a4a;
-      --color-neutral-600: #666;
-      --color-neutral-400: #999;
-      --color-neutral-200: #ddd;
-      --color-neutral-100: #f0f0f0;
-      --color-white: #fff;
-      --color-success: #4caf50;
+    /* ===== DESIGN SYSTEM & PALETTE (matching ketl.au) ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Caprasimo:wght@400&family=Figtree:wght@400;600;700&display=swap');
 
-      --font-heading: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    :root {
+      --color-bg: #f5ead8;
+      --color-surface: #ebddc5;
+      --color-text: #201e1d;
+      --color-accent: #c67139;
+      --color-accent-2: #7a8a5e;
+      --color-divider: color-mix(in srgb, #201e1d 16%, transparent);
+
+      --color-neutral-100: #f9f4ed;
+      --color-neutral-200: #eee7db;
+      --color-neutral-300: #dcd3c4;
+      --color-neutral-400: #c0b6a5;
+      --color-neutral-500: #a19786;
+      --color-neutral-600: #82796a;
+      --color-neutral-700: #645c50;
+      --color-neutral-800: #474238;
+      --color-neutral-900: #2e2b25;
+
+      --color-accent-100: #fff2eb;
+      --color-accent-200: #ffe1d0;
+      --color-accent-300: #ffc6a5;
+      --color-accent-400: #f6a06b;
+      --color-accent-500: #d67f48;
+      --color-accent-600: #b2622d;
+      --color-accent-700: #8c491a;
+      --color-accent-800: #643312;
+      --color-accent-900: #402310;
+
+      --color-accent-2-100: #f0fae1;
+      --color-accent-2-200: #e1eecc;
+      --color-accent-2-300: #ccdbb2;
+      --color-accent-2-400: #aebf92;
+      --color-accent-2-500: #8fa073;
+      --color-accent-2-600: #728157;
+      --color-accent-2-700: #56633f;
+      --color-accent-2-800: #3d472b;
+      --color-accent-2-900: #272e1b;
+
+      --font-heading: 'Caprasimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --font-body: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
       --space-xs: 8px;
@@ -35,10 +59,11 @@
       --space-2xl: 52px;
 
       --radius: 12px;
-      --radius-lg: 16px;
+      --radius-lg: 28px;
 
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --shadow-sm: 0 1px 2px color-mix(in srgb, #2e2b25 14%, transparent);
+      --shadow-md: 0 3px 10px color-mix(in srgb, #2e2b25 16%, transparent);
+      --shadow-lg: 0 12px 32px color-mix(in srgb, #2e2b25 22%, transparent);
     }
 
     /* ===== PLACEHOLDER CONFIG ===== */
@@ -54,8 +79,8 @@
 
     html, body {
       font-family: var(--font-body);
-      background: var(--color-cream);
-      color: var(--color-neutral-900);
+      background: var(--color-bg);
+      color: var(--color-text);
       line-height: 1.6;
     }
 
@@ -63,11 +88,11 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(250, 248, 243, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(41, 95, 138, 0.1);
-      padding: var(--space-md) var(--space-lg);
+      z-index: 60;
+      background: rgba(245, 234, 216, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-divider);
+      padding: 12px 28px;
     }
 
     .header-inner {
@@ -84,35 +109,50 @@
       align-items: center;
       gap: var(--space-sm);
       text-decoration: none;
-      color: var(--color-neutral-900);
-      font-weight: 600;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
+      color: var(--color-text);
+      font-family: var(--font-heading);
+      font-size: 1.22rem;
+      letter-spacing: 0.01em;
     }
 
     .logo img {
-      width: 36px;
-      height: 36px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       object-fit: cover;
+    }
+
+    .logo span {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .logo small {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-accent-700);
+      font-weight: 600;
     }
 
     nav {
       display: flex;
       align-items: center;
       gap: var(--space-lg);
-      font-size: 0.9rem;
+      font-size: 0.86rem;
       font-weight: 500;
+      margin-left: auto;
     }
 
     nav a {
       text-decoration: none;
-      color: var(--color-neutral-700);
+      color: var(--color-neutral-800);
       transition: color 0.2s;
     }
 
     nav a:hover {
-      color: var(--color-blue);
+      color: var(--color-accent);
     }
 
     @media (max-width: 640px) {
@@ -139,24 +179,24 @@
     }
 
     .btn-primary {
-      background: var(--color-blue);
+      background: var(--color-accent);
       color: white;
     }
 
     .btn-primary:hover {
-      background: #1d4063;
+      background: var(--color-accent-700);
       transform: translateY(-1px);
       box-shadow: var(--shadow-md);
     }
 
     .btn-secondary {
       background: white;
-      color: var(--color-blue);
-      border: 2px solid var(--color-blue);
+      color: var(--color-accent);
+      border: 2px solid var(--color-accent);
     }
 
     .btn-secondary:hover {
-      background: var(--color-blue-light);
+      background: var(--color-accent-100);
     }
 
     .btn-block {
@@ -165,42 +205,94 @@
 
     /* ===== HERO ===== */
     .hero {
-      padding: var(--space-2xl) var(--space-lg);
-      background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-tan) 100%);
-      text-align: center;
+      padding: 76px 28px 20px;
+      background: var(--color-bg);
     }
 
-    .hero-inner {
-      max-width: 900px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      max-width: 1180px;
       margin: 0 auto;
+      align-items: center;
+    }
+
+    .hero-content {
+      text-align: left;
+    }
+
+    .hero-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-image {
+        display: none;
+      }
     }
 
     .hero-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-orange);
+      color: var(--color-accent-2-700);
       font-weight: 700;
-      margin-bottom: var(--space-md);
+      margin-bottom: 26px;
+    }
+
+    .hero-eyebrow span:first-child {
+      width: 26px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--color-accent);
     }
 
     .hero h1 {
       font-family: var(--font-heading);
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2.5rem, 5.4vw, 4.3rem);
       font-weight: 400;
-      line-height: 1.15;
-      margin-bottom: var(--space-md);
-      color: var(--color-neutral-900);
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+      margin: 0 0 26px;
+      max-width: 15ch;
+      color: var(--color-text);
+    }
+
+    .hero h1 span {
+      color: var(--color-accent-700);
     }
 
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       line-height: 1.6;
+      color: var(--color-neutral-800);
+      margin: 0 0 20px;
+      font-weight: 400;
+    }
+
+    .hero p:last-of-type {
+      font-size: 0.96rem;
       color: var(--color-neutral-700);
-      margin-bottom: var(--space-xl);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 34px;
     }
 
     .hero-cta {
@@ -213,7 +305,7 @@
     /* ===== TRUST BAR ===== */
     .trust-bar {
       background: white;
-      padding: var(--space-lg) var(--space-lg);
+      padding: var(--space-lg);
       border-bottom: 1px solid var(--color-neutral-200);
     }
 
@@ -225,7 +317,7 @@
       justify-content: center;
       gap: var(--space-lg);
       font-size: 0.9rem;
-      color: var(--color-neutral-600);
+      color: var(--color-neutral-700);
       text-align: center;
     }
 
@@ -236,7 +328,7 @@
     }
 
     .trust-item strong {
-      color: var(--color-neutral-900);
+      color: var(--color-text);
     }
 
     @media (max-width: 720px) {
@@ -248,7 +340,7 @@
 
     /* ===== SECTION LAYOUT ===== */
     section {
-      padding: var(--space-2xl) var(--space-lg);
+      padding: 88px 28px;
     }
 
     .section-inner {
@@ -258,56 +350,74 @@
 
     .section-header {
       max-width: 800px;
-      margin-bottom: var(--space-xl);
+      margin-bottom: 44px;
     }
 
     .section-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-blue);
+      color: var(--color-accent-2-700);
       font-weight: 700;
-      margin-bottom: var(--space-sm);
+      margin-bottom: 14px;
     }
 
     .section-title {
       font-family: var(--font-heading);
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-size: clamp(1.9rem, 3.6vw, 2.7rem);
       font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: var(--space-md);
-      color: var(--color-neutral-900);
+      line-height: 1.1;
+      margin: 0 0 14px;
+      color: var(--color-text);
     }
 
     .section-intro {
-      font-size: 1.05rem;
+      font-size: 1.03rem;
       line-height: 1.6;
-      color: var(--color-neutral-700);
+      color: var(--color-neutral-800);
+      margin: 0;
     }
 
     /* ===== PATHWAY CARDS ===== */
     .pathway-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-lg);
+      grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+      gap: 22px;
       margin-top: var(--space-xl);
     }
 
     .pathway-card {
-      background: white;
-      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 0;
+      overflow: hidden;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-sm);
-      border-top: 4px solid var(--color-blue);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .pathway-card:nth-child(2) {
-      border-top-color: var(--color-orange);
+    .pathway-card::before {
+      content: '';
+      height: 6px;
+      background: var(--color-accent-500);
     }
 
-    .pathway-card:nth-child(3) {
-      border-top-color: var(--color-blue);
+    .pathway-card:nth-child(2)::before {
+      background: var(--color-accent);
+    }
+
+    .pathway-card:nth-child(3)::before {
+      background: var(--color-accent-2-600);
+    }
+
+    .pathway-card > div {
+      padding: 6px 26px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      height: 100%;
+      background: white;
     }
 
     .pathway-card:hover {
@@ -317,21 +427,23 @@
 
     .pathway-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: var(--space-md);
-      color: var(--color-neutral-900);
+      font-size: 1.32rem;
+      font-weight: 400;
+      margin: 0;
+      color: var(--color-text);
+      line-height: 1.2;
     }
 
     .pathway-card p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--color-neutral-700);
+      font-size: 0.93rem;
+      line-height: 1.55;
+      color: var(--color-neutral-800);
+      margin: 0;
     }
 
     /* ===== COHORT DETAILS ===== */
     .cohort-section {
-      background: var(--color-blue-light);
+      background: var(--color-surface);
     }
 
     .cohort-details {
@@ -361,15 +473,16 @@
       font-size: 0.8rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--color-blue);
+      color: var(--color-accent-700);
       font-weight: 700;
       margin-bottom: var(--space-sm);
     }
 
     .detail-item p {
       font-size: 0.95rem;
-      color: var(--color-neutral-700);
+      color: var(--color-neutral-800);
       line-height: 1.6;
+      margin: 0;
     }
 
     @media (max-width: 720px) {
@@ -398,8 +511,8 @@
     }
 
     .pricing-card.featured {
-      border-color: var(--color-orange);
-      background: var(--color-orange-light);
+      border-color: var(--color-accent);
+      background: var(--color-accent-100);
       transform: scale(1.05);
     }
 
@@ -417,7 +530,7 @@
       font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--color-orange);
+      color: var(--color-accent);
       font-weight: 700;
       margin-bottom: var(--space-md);
     }
@@ -425,33 +538,35 @@
     .pricing-card h3 {
       font-family: var(--font-heading);
       font-size: 1.2rem;
-      font-weight: 500;
+      font-weight: 400;
       margin-bottom: var(--space-sm);
-      color: var(--color-neutral-900);
+      color: var(--color-text);
+      margin: 0 0 var(--space-sm);
     }
 
     .pricing-details {
       font-size: 0.9rem;
-      color: var(--color-neutral-600);
+      color: var(--color-neutral-700);
       margin-bottom: var(--space-md);
       flex-grow: 1;
     }
 
     .pricing-details p {
       margin-bottom: var(--space-sm);
+      margin: 0 0 var(--space-sm);
     }
 
     .pricing-price {
       font-family: var(--font-heading);
       font-size: 2rem;
-      font-weight: 600;
-      color: var(--color-blue);
+      font-weight: 400;
+      color: var(--color-accent);
       margin-bottom: var(--space-md);
     }
 
     .pricing-price small {
       font-size: 0.5em;
-      color: var(--color-neutral-600);
+      color: var(--color-neutral-700);
       font-weight: 400;
     }
 
@@ -507,7 +622,7 @@
 
     /* ===== BOOKING CTA ===== */
     .booking-section {
-      background: var(--color-orange-light);
+      background: var(--color-accent-100);
     }
 
     .booking-inner {
@@ -521,12 +636,12 @@
       font-size: 2rem;
       font-weight: 400;
       margin-bottom: var(--space-lg);
-      color: var(--color-neutral-900);
+      color: var(--color-text);
     }
 
     .booking-section p {
       font-size: 1rem;
-      color: var(--color-neutral-700);
+      color: var(--color-neutral-800);
       margin-bottom: var(--space-lg);
     }
 
@@ -546,14 +661,18 @@
     /* ===== FOOTER ===== */
     footer {
       background: var(--color-neutral-900);
-      color: var(--color-neutral-400);
+      color: var(--color-neutral-500);
       padding: var(--space-xl) var(--space-lg);
       text-align: center;
       font-size: 0.85rem;
     }
 
+    footer p {
+      margin: 0;
+    }
+
     footer a {
-      color: var(--color-orange);
+      color: var(--color-accent);
       text-decoration: none;
     }
 
@@ -577,11 +696,11 @@
     /* ===== MOBILE RESPONSIVENESS ===== */
     @media (max-width: 720px) {
       section {
-        padding: var(--space-xl) var(--space-md);
+        padding: 80px 28px;
       }
 
       .hero {
-        padding: var(--space-xl) var(--space-md);
+        padding: 76px 28px 20px;
       }
 
       .pricing-card.featured {
@@ -602,7 +721,10 @@
   <div class="header-inner">
     <a href="/" class="logo">
       <img src="../uploads/KETL-Circular-3d-logo-ketl-kanga-kk.png" alt="KETL">
-      <span>KETL</span>
+      <span>
+        <span>KETL</span>
+        <small>Kanga EdTech Vision Labs</small>
+      </span>
     </a>
     <nav>
       <a href="#holiday-sprint">Camps</a>
@@ -614,13 +736,22 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Spring Holidays</div>
-    <h1>This holidays: build, don't just play.</h1>
-    <p>AI + Coding Sprint for ages 9–12. Five days coding real systems, not dragging blocks.</p>
-    <div class="hero-cta">
-      <a href="#holiday-sprint" class="btn btn-primary">Reserve Your Spot</a>
-      <a href="#info" class="btn btn-secondary">Free Info Session</a>
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span></span>
+        Spring Holidays · Ages 9–12
+      </div>
+      <h1>This holidays: <span>build, don't just play.</span></h1>
+      <p>AI + Coding Sprint. Five days coding real systems, not dragging blocks.</p>
+      <p>28 Sep–2 Oct & 6–9 Oct. From $219.</p>
+      <div class="hero-cta">
+        <a href="#holiday-sprint" class="btn btn-primary">Reserve Your Spot</a>
+        <a href="#info" class="btn btn-secondary">Free Info Session</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="../uploads/3d-logo-ketl-kanga-kk.png" alt="KETL — a robot kangaroo at a laptop, surrounded by circuits, gears and atoms">
     </div>
   </div>
 </section>
@@ -653,16 +784,22 @@
     </div>
     <div class="pathway-grid">
       <div class="pathway-card">
-        <h3>Explorer</h3>
-        <p><strong>Days 1–2:</strong> Understand how AI learns. Block-code a machine learning classifier. First real functions, first real logic.</p>
+        <div>
+          <h3>Block-coding</h3>
+          <p><strong>Days 1–2:</strong> Understand how AI learns. Block-code a machine learning classifier. First real functions, first real logic.</p>
+        </div>
       </div>
       <div class="pathway-card">
-        <h3>Partner</h3>
-        <p><strong>Days 2–4:</strong> Configure AI as a working partner. Integrate an API. Code against a real system, not a sandbox.</p>
+        <div>
+          <h3>Creative STEAM</h3>
+          <p><strong>Days 2–4:</strong> Configure AI as a working partner. Integrate an API. Code against a real system, not a sandbox.</p>
+        </div>
       </div>
       <div class="pathway-card">
-        <h3>Architect</h3>
-        <p><strong>Day 5:</strong> Put it together. Build a small tool that does something useful. Portfolio piece. Proof they understand the stack.</p>
+        <div>
+          <h3>Real-world systems</h3>
+          <p><strong>Day 5:</strong> Put it together. Build a small tool that does something useful. Portfolio piece. Proof they understand the stack.</p>
+        </div>
       </div>
     </div>
   </div>
