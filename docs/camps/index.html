@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KETL AI + Coding Sprint — Spring Holidays</title>
-  <meta name="description" content="AI + Coding Sprint for ages 9–12. Build, don't just play. 28 Sep – 2 Oct & 6–9 Oct. From $219.">
+  <meta name="description" content="AI + Coding Sprint for ages 8–14. Build, don't just play. 28 Sep – 2 Oct & 6–9 Oct. From $219.">
 
   <style>
     /* ===== DESIGN SYSTEM & PALETTE (matching ketl.au) ===== */
@@ -742,7 +742,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">
         <span></span>
-        Spring Holidays · Ages 9–12
+        Spring Holidays · Ages 8–14
       </div>
       <h1>This holidays: <span>build, don't just play.</span></h1>
       <p>AI + Coding Sprint. Five days coding real systems, not dragging blocks.</p>
@@ -762,7 +762,7 @@
 <div class="trust-bar">
   <div class="trust-inner">
     <div class="trust-item">
-      <strong>Ages 9–12</strong>
+      <strong>Ages 8–14</strong>
       <span>no experience needed</span>
     </div>
     <div class="trust-item">
@@ -819,7 +819,7 @@
         <div class="detail-item">
           <strong>Week 1: Spring Break Sprint</strong>
           <p>28 Sep – 2 Oct (5 days, Mon–Fri)</p>
-          <p>Format: {{FORMAT}} / day, small cohort (max {{COHORT_CAP}} students)</p>
+          <p>Format: 1 hour / day, small cohort (max 9 students)</p>
         </div>
         <div class="detail-item">
           <strong>Week 2: Extended Sprint</strong>
@@ -838,6 +838,17 @@
         </div>
       </div>
     </div>
+
+    <div style="background:white;border:2px solid var(--color-accent-2-200);border-radius:var(--radius-lg);padding:var(--space-lg);margin-top:var(--space-lg);">
+      <strong style="display:block;font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-2-700);font-weight:700;margin-bottom:var(--space-md);">Daily Batch Times</strong>
+      <p style="font-size:0.95rem;color:var(--color-neutral-800);line-height:1.6;margin:0 0 var(--space-sm);">Two batches available each day:</p>
+      <ul style="font-size:0.95rem;color:var(--color-neutral-800);line-height:1.6;margin:var(--space-sm) 0 var(--space-md);padding-left:20px;">
+        <li><strong>Morning (ages 8–11):</strong> 9:30–10:30am</li>
+        <li><strong>Afternoon (ages 11–14):</strong> 1:30–2:30pm</li>
+      </ul>
+      <p style="font-size:0.95rem;color:var(--color-accent-700);line-height:1.6;margin:0;font-weight:600;">Morning batch filling fast — book early to secure your spot.</p>
+    </div>
+    </div>
   </div>
 </section>
 
@@ -855,7 +866,7 @@
         <div class="pricing-details">
           <p>28 Sep – 2 Oct</p>
           <p>5 days</p>
-          <p>Max {{COHORT_CAP}} students</p>
+          <p>Max 9 students</p>
         </div>
         <div class="pricing-price">$274</div>
       </div>
@@ -865,7 +876,7 @@
         <div class="pricing-details">
           <p>6–9 Oct (+ 5 Oct optional)</p>
           <p>4 days (5 if Labour Day included)</p>
-          <p>Max {{COHORT_CAP}} students</p>
+          <p>Max 9 students</p>
         </div>
         <div class="pricing-price">$219<small> / 4 days</small></div>
       </div>
@@ -876,6 +887,7 @@
           <p>5 Oct only (Mon)</p>
           <p>Extends Week 2 to 5 days</p>
           <p>Same cohort, same instructor</p>
+          <p style="font-size:0.85rem;color:var(--color-accent-700);font-weight:600;margin-top:var(--space-sm);">Runs within the same batch times as Week 2 (morning or afternoon, as selected).</p>
         </div>
         <div class="pricing-price">$274<small> / 5 days</small></div>
       </div>
@@ -885,7 +897,7 @@
         <div class="pricing-details">
           <p>28 Sep – 2 Oct + 6–9 Oct</p>
           <p>9 days total</p>
-          <p>Max {{COHORT_CAP}} students</p>
+          <p>Max 9 students</p>
         </div>
         <div class="pricing-price">$399</div>
       </div>
@@ -919,12 +931,20 @@
     <h2>Ready. Let's go.</h2>
     <p>Reserve your spot below. We'll send you everything you need — session link, code setup guide, what to have on hand.</p>
 
-    <!-- TODO: Tally.so embed -->
-    <!-- Paste the Tally.so embed script here: https://tally.so/r/wvzXL8 (example) -->
-    <!-- The form should: capture name, age, email, which week(s), extras (Labour Day?), guardian info -->
-    <!-- Tally handles Stripe integration on the backend — form submission triggers payment flow -->
+    <!-- Tally.so booking form embed -->
     <div id="tally-form">
-      <p><em>Booking form embedding here. Paste Tally.so embed script inside this div.</em></p>
+      <div style="background:var(--color-neutral-100);padding:var(--space-xl);border-radius:var(--radius-lg);text-align:left;">
+        <p style="color:var(--color-accent-700);font-weight:700;margin-bottom:var(--space-md);">⚠ Booking form not yet embedded</p>
+        <p style="color:var(--color-neutral-700);margin:0 0 var(--space-md);">Replace this placeholder with the Tally.so form embed script. The form should collect:</p>
+        <ul style="color:var(--color-neutral-700);padding-left:20px;margin:0 0 var(--space-md);">
+          <li>Child's name and age</li>
+          <li>Parent/guardian email and phone</li>
+          <li>Which week(s) they're enrolling in</li>
+          <li>Batch preference (morning or afternoon)</li>
+          <li>Whether they want the Labour Day add-on</li>
+        </ul>
+        <p style="color:var(--color-neutral-600);font-size:0.9rem;margin:0;">Tally handles payment via Stripe integration. Form submission triggers the payment flow automatically.</p>
+      </div>
     </div>
   </div>
 </section>
