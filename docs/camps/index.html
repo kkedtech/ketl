@@ -645,17 +645,11 @@
       margin-bottom: var(--space-lg);
     }
 
-    /* TODO: Tally.so form embed placeholder */
     #tally-form {
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: white;
       border-radius: var(--radius-lg);
       margin-top: var(--space-lg);
-      color: var(--color-neutral-600);
-      font-size: 0.9rem;
+      overflow: hidden;
     }
 
     /* ===== FOOTER ===== */
@@ -931,20 +925,14 @@
     <h2>Ready. Let's go.</h2>
     <p>Reserve your spot below. We'll send you everything you need — session link, code setup guide, what to have on hand.</p>
 
-    <!-- Tally.so booking form embed -->
+    <!-- Jotform booking form embed -->
     <div id="tally-form">
-      <div style="background:var(--color-neutral-100);padding:var(--space-xl);border-radius:var(--radius-lg);text-align:left;">
-        <p style="color:var(--color-accent-700);font-weight:700;margin-bottom:var(--space-md);">⚠ Booking form not yet embedded</p>
-        <p style="color:var(--color-neutral-700);margin:0 0 var(--space-md);">Replace this placeholder with the Tally.so form embed script. The form should collect:</p>
-        <ul style="color:var(--color-neutral-700);padding-left:20px;margin:0 0 var(--space-md);">
-          <li>Child's name and age</li>
-          <li>Parent/guardian email and phone</li>
-          <li>Which week(s) they're enrolling in</li>
-          <li>Batch preference (morning or afternoon)</li>
-          <li>Whether they want the Labour Day add-on</li>
-        </ul>
-        <p style="color:var(--color-neutral-600);font-size:0.9rem;margin:0;">Tally handles payment via Stripe integration. Form submission triggers the payment flow automatically.</p>
-      </div>
+      <iframe
+        src="https://form.jotform.com/ketl/ketl-ai-coding-holiday-booking"
+        style="width:100%;min-height:600px;border:none;border-radius:var(--radius-lg);"
+        title="KETL AI + Coding Holiday Booking"
+        loading="lazy">
+      </iframe>
     </div>
   </div>
 </section>
