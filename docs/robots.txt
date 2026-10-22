@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /gallery
-Disallow: /uploads/Coding-Club-small-number-photos/
+Disallow:

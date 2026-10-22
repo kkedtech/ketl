@@ -3,6 +3,14 @@
 First used: 2026-09-30 for `/gallery` (Coding Club photos of children).
 Takedown commit: `b0b7cb2`.
 
+Restored: 2026-10-22, after the site owner confirmed every photo passed the
+checklist below. On restore the 28 photos were re-saved without metadata
+(all 28 originally carried GPS location), downscaled to 1600px, renamed to
+`docs/uploads/gallery/club-NN.jpg` (no date-stamped filenames), and the
+`robots.txt` block was lifted. A copy of the gallery is also published on
+ketl.in (`kkedtech/ketl.in`), so a future takedown must be done in **both**
+repositories.
+
 ## Why this needs a runbook
 ketl.au is static hosting (GitHub Pages behind Cloudflare). There is no login or
 access control. Hiding a page does NOT hide the files it links to: anything under
