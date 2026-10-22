@@ -1,18 +1,16 @@
-# Runbook: point ketl.in at ketl.au/in
+# Runbook: ketl.in
 
-Goal: anyone who types **ketl.in** or **www.ketl.in** (any path) lands on
-**https://ketl.au/in/** with a permanent (301) redirect. Query strings such
-as `?utm_source=...` are kept so campaign tracking still works.
+**Current setup (Option C below):** ketl.in is its own GitHub Pages site in
+the `kkedtech/ketl.in` repository, with copies of the India home page, `/aia`,
+`/aiy` and `/gallery`. When any of those pages changes in this repository,
+make the same change in `kkedtech/ketl.in` (its README lists which file maps
+to which).
 
-| Visitor types | Lands on |
-| --- | --- |
-| `ketl.in` | `https://ketl.au/in/` |
-| `www.ketl.in` | `https://ketl.au/in/` |
-| `ketl.in/anything?utm_source=flyer` | `https://ketl.au/in/?utm_source=flyer` |
+Options A and B are the alternative: send every ketl.in address to
+**https://ketl.au/in/** with a permanent (301) redirect instead of keeping a
+second copy of the pages.
 
-Every path goes to `/in/` because ketl.au has only one India page.
-
-## Option A (recommended): Cloudflare Redirect Rule
+## Option A: Cloudflare Redirect Rule
 
 No code and free on every Cloudflare plan. ketl.au already runs on
 Cloudflare (see `cloudflare/geo-redirect-worker.js`), so keep both domains
@@ -80,11 +78,11 @@ have a "Domain forwarding" or "URL redirect" setting:
   `http://`, so `https://ketl.in` fails with a certificate error. That is
   the main reason to prefer Option A.
 
-## Option C: GitHub Pages copy of the India page (current setup)
+## Option C: GitHub Pages copy of the India pages (current setup)
 
 ketl.in is its own GitHub Pages site in the **`kkedtech/ketl.in`**
-repository: a copy of `docs/in/index.html` that runs from the site root (see
-that repo's README). Visitors stay on ketl.in rather than being redirected.
+repository: copies of `docs/in`, `docs/aia`, `docs/aiy` and `docs/gallery`
+that run from the site root (see that repo's README). Visitors stay on ketl.in rather than being redirected.
 GitHub Pages allows only one custom domain per repository, which is why
 ketl.in can't be served from this one.
 
@@ -104,8 +102,8 @@ ketl.in can't be served from this one.
 3. Once the DNS check on the Pages settings screen goes green, tick
    **Enforce HTTPS** (the certificate can take up to an hour to appear).
 
-**Keep the two copies in sync:** when `docs/in/index.html` changes here,
-make the same change in `kkedtech/ketl.in/index.html`.
+**Keep the copies in sync:** when any of those pages changes here, make the
+same change in `kkedtech/ketl.in`.
 
 ## Check it works
 
