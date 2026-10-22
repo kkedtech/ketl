@@ -80,22 +80,18 @@ have a "Domain forwarding" or "URL redirect" setting:
   `http://`, so `https://ketl.in` fails with a certificate error. That is
   the main reason to prefer Option A.
 
-## Option C: GitHub Pages (current setup)
+## Option C: GitHub Pages copy of the India page (current setup)
 
-Use this when ketl.in's DNS already points at GitHub (visiting ketl.in shows
-"There isn't a GitHub Pages site here"). GitHub Pages allows only **one
-custom domain per repository**, and this repository is taken by ketl.au, so
-ketl.in gets its own small repository. Its files are in `domains/ketl-in/`
-(`index.html`, `404.html`, `CNAME`, `README.md`).
+ketl.in is its own GitHub Pages site in the **`kkedtech/ketl.in`**
+repository: a copy of `docs/in/index.html` that runs from the site root (see
+that repo's README). Visitors stay on ketl.in rather than being redirected.
+GitHub Pages allows only one custom domain per repository, which is why
+ketl.in can't be served from this one.
 
-1. On GitHub: **New repository** → owner `kkedtech`, name `ketl-in`,
-   **Public**, leave it empty (no README).
-2. Upload the four files from `domains/ketl-in/` to the root of `main`
-   (**Add file → Upload files**).
-3. `ketl-in` → **Settings → Pages**: Source **Deploy from a branch**, branch
-   `main`, folder `/ (root)` → **Save**. Under **Custom domain** enter
-   `ketl.in` → **Save**.
-4. DNS at the ketl.in registrar (or Cloudflare, with the cloud **grey**):
+1. `kkedtech/ketl.in` → **Settings → Pages**: Source **Deploy from a
+   branch**, branch `main`, folder `/ (root)` → **Save**. Under **Custom
+   domain** enter `ketl.in` → **Save**.
+2. DNS at the ketl.in registrar (or Cloudflare, with the cloud **grey**):
 
    | Type | Name | Content |
    | --- | --- | --- |
@@ -105,12 +101,11 @@ ketl.in gets its own small repository. Its files are in `domains/ketl-in/`
    | A | `@` | `185.199.111.153` |
    | CNAME | `www` | `kkedtech.github.io` |
 
-5. Once the DNS check on the Pages settings screen goes green, tick
+3. Once the DNS check on the Pages settings screen goes green, tick
    **Enforce HTTPS** (the certificate can take up to an hour to appear).
 
-GitHub Pages can't send a real 301, so these pages forward in the browser
-instead. Visitors won't notice, but search engines treat it as weaker than
-a 301; Option A is the stronger setup if ketl.in later moves to Cloudflare.
+**Keep the two copies in sync:** when `docs/in/index.html` changes here,
+make the same change in `kkedtech/ketl.in/index.html`.
 
 ## Check it works
 
@@ -123,8 +118,8 @@ curl -sI "https://ketl.in/x?a=1"    | grep -i -E "^HTTP|^location"
 ```
 
 Each should show `HTTP/2 301` and a `location:` of `https://ketl.au/in/`
-(the last one ending in `?a=1`). With Option C, curl shows `HTTP/2 200`
-instead, because the forwarding happens in the browser. Either way, just open ketl.in on a phone and
+(the last one ending in `?a=1`). With Option C there is no redirect:
+curl shows `HTTP/2 200` because ketl.in serves the page itself. Either way, just open ketl.in on a phone and
 confirm it lands on the India page with the kangaroo + peacock logo.
 
 ## How it fits with the ketl.au geo-redirect
