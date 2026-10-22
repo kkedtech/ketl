@@ -80,6 +80,38 @@ have a "Domain forwarding" or "URL redirect" setting:
   `http://`, so `https://ketl.in` fails with a certificate error. That is
   the main reason to prefer Option A.
 
+## Option C: GitHub Pages (current setup)
+
+Use this when ketl.in's DNS already points at GitHub (visiting ketl.in shows
+"There isn't a GitHub Pages site here"). GitHub Pages allows only **one
+custom domain per repository**, and this repository is taken by ketl.au, so
+ketl.in gets its own small repository. Its files are in `domains/ketl-in/`
+(`index.html`, `404.html`, `CNAME`, `README.md`).
+
+1. On GitHub: **New repository** → owner `kkedtech`, name `ketl-in`,
+   **Public**, leave it empty (no README).
+2. Upload the four files from `domains/ketl-in/` to the root of `main`
+   (**Add file → Upload files**).
+3. `ketl-in` → **Settings → Pages**: Source **Deploy from a branch**, branch
+   `main`, folder `/ (root)` → **Save**. Under **Custom domain** enter
+   `ketl.in` → **Save**.
+4. DNS at the ketl.in registrar (or Cloudflare, with the cloud **grey**):
+
+   | Type | Name | Content |
+   | --- | --- | --- |
+   | A | `@` | `185.199.108.153` |
+   | A | `@` | `185.199.109.153` |
+   | A | `@` | `185.199.110.153` |
+   | A | `@` | `185.199.111.153` |
+   | CNAME | `www` | `kkedtech.github.io` |
+
+5. Once the DNS check on the Pages settings screen goes green, tick
+   **Enforce HTTPS** (the certificate can take up to an hour to appear).
+
+GitHub Pages can't send a real 301, so these pages forward in the browser
+instead. Visitors won't notice, but search engines treat it as weaker than
+a 301; Option A is the stronger setup if ketl.in later moves to Cloudflare.
+
 ## Check it works
 
 From any terminal:
@@ -91,7 +123,8 @@ curl -sI "https://ketl.in/x?a=1"    | grep -i -E "^HTTP|^location"
 ```
 
 Each should show `HTTP/2 301` and a `location:` of `https://ketl.au/in/`
-(the last one ending in `?a=1`). Or just open ketl.in on a phone and
+(the last one ending in `?a=1`). With Option C, curl shows `HTTP/2 200`
+instead, because the forwarding happens in the browser. Either way, just open ketl.in on a phone and
 confirm it lands on the India page with the kangaroo + peacock logo.
 
 ## How it fits with the ketl.au geo-redirect
