@@ -9,7 +9,7 @@ Each block is under 1024 characters. AU and India price variants are marked.
 
 Hi, thanks for messaging KETL.
 
-We run a child-centric technology learning pathway for ages 7–24 — coding,
+We run a child-centric technology learning pathway for ages 6–24 — coding,
 electronics, mechanics, robotics and AI. Most families start with our free 30-minute
 parent webinar, or with a single Unplugged AI session for the child.
 
@@ -33,7 +33,7 @@ Free. Next session on request — reply with a time that suits you.
 
 ## 3. Unplugged AI — single session
 
-**Unplugged AI — Single Session** · Ages 8–12
+**Unplugged AI — Single Session** · Ages 6–12
 
 One 45-minute sitting, mostly screen-free — cards, grids and stories that teach how AI
 learns, sees, and gets things wrong. It ends with a first live block-coding touch.
@@ -48,7 +48,7 @@ Reply BOOK and we'll hold a place.
 
 ## 4. Holiday AI Sprint — 8 sessions
 
-**Holiday AI Sprint — 8 Sessions** · Ages 9–12
+**Holiday AI Sprint — 8 Sessions** · Ages 6–12
 
 Block-coding and AI concepts over a school-holiday block. Live online, capped at 6
 students per session.
@@ -94,7 +94,7 @@ Thanks for joining the webinar.
 
 Where most families go next:
 
-· Child aged 8–12, no coding yet → Unplugged AI single session (AU $39 / ₹199)
+· Child aged 6–12, no coding yet → Unplugged AI single session (AU $39 / ₹199)
 · Ready for a deeper block over the holidays → Holiday AI Sprint (AU $260 / ₹2,499)
 · Want steady weekly progress → Coding Club (AU $35–$50 / ₹600–₹900 per session)
 
