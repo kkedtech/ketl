@@ -9,7 +9,7 @@ Each block is under 1024 characters. AU and India price variants are marked.
 
 Hi, thanks for messaging KETL.
 
-We run a child-centric technology learning pathway for ages 8–24 — coding,
+We run a child-centric technology learning pathway for ages 7–24 — coding,
 electronics, mechanics, robotics and AI. Most families start with our free 30-minute
 parent webinar, or with a single Unplugged AI session for the child.
 
