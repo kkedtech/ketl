@@ -11,6 +11,9 @@ checklist below. On restore the 28 photos were re-saved without metadata
 ketl.in (`kkedtech/ketl.in`), so a future takedown must be done in **both**
 repositories.
 
+Removed 2026-11-18 at the site owner's request: `club-18.jpg` (page entry and
+file) from both ketl.au and ketl.in. 27 photos remain.
+
 ## Why this needs a runbook
 ketl.au is static hosting (GitHub Pages behind Cloudflare). There is no login or
 access control. Hiding a page does NOT hide the files it links to: anything under
